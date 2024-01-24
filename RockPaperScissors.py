@@ -3,14 +3,16 @@ import random
 def play():
     user = input("What is your move? ('r' for rock, 'p' for paper, and 's' for scissors)")
     opponent = random.choice(['r', 'p', 's'])
+    message = ''
 
     if user == opponent:
-        return 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - Its a tie!'
+        message = 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - Its a tie!'
+    elif match(user, opponent):
+        message = 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - You won!'
+    else:
+        message = 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - You lost!'
     
-    if match(user, opponent):
-        return 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - You won!'
-    
-    return 'Your move: ' + printUser(user) + '  My move: ' + printOpponent(opponent) + ' - You lost!'
+    return message
 
         
 def match(user, opponent):
