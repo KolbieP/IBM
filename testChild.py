@@ -2,3 +2,7 @@
 
 print("Inside Child Branch")
 
+from RockPaperScissors import *
+
+print(play())
+

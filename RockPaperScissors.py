@@ -43,4 +43,4 @@ def printOpponent(opponent):
     
     return opponentMove
 
-print(play())
+
